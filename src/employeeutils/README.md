@@ -1,234 +1,364 @@
-# 🎓 Student Management System
+# 👨‍💼 Employee Management System
 
-## 📌 Question 1
+## 📌 Question 2
 
-This program is a simple **Student Management System** developed using **Java OOP concepts**.
+A simple **Employee Management System** developed using **Java Object-Oriented Programming (OOP)** concepts.
 
-The main purpose of this program is to create Student objects, compare students, calculate average marks, and find the student with the highest marks.
+This program demonstrates how to create and manage Employee objects, compare employees using their IDs, calculate the average salary, and identify the highest-paid employee.
 
 ---
 
 ## 📦 Package
 
 ```text
-studentutils
+employeeutils
 ```
 
 ---
 
-## 📁 Files
+## 📁 Project Files
 
 ```text
-studentutils/
-├── Student.java
-├── StudentUtils.java
+employeeutils/
+├── Employee.java
+├── EmployeeUtils.java
 ├── Main.java
 └── README.md
 ```
 
+### File Responsibilities
+
+| File | Responsibility |
+|---|---|
+| `Employee.java` | Defines the Employee class and its properties |
+| `EmployeeUtils.java` | Provides utility methods for Employee objects |
+| `Main.java` | Creates objects and demonstrates all operations |
+| `README.md` | Contains project documentation |
+
 ---
 
-## 👨‍🎓 1. Student.java
+# 👨‍💼 Employee.java
 
-The `Student` class represents a student.
+The `Employee` class represents an employee in the system.
 
-It contains three fields:
+### Employee Attributes
 
 ```text
-id
+employeeId
 name
-marks
+department
+salary
 ```
 
-All fields are declared as `private` to implement **encapsulation**.
+All attributes are declared as `private` to achieve **encapsulation**.
 
-The class also contains:
+### Class Features
 
-- 🔧 Parameterized constructor
-- 🔐 Private fields
-- 📖 Getter methods
-- 📝 `toString()`
-- ⚖️ `equals()`
-- 🔢 `hashCode()`
+- Parameterized constructor
+- Private fields
+- Public getter methods
+- `toString()` method
+- `equals()` method
+- `hashCode()` method
 
-### Example Student
+### Example Employee
 
 ```text
-ID: 1
+Employee ID: 101
 Name: Rahul
-Marks: 85.5
+Department: IT
+Salary: 65000.0
 ```
 
 ---
 
-## 🛠️ 2. StudentUtils.java
+# 🛠️ EmployeeUtils.java
 
-`StudentUtils` is a **utility class**.
+`EmployeeUtils` is a **utility class** that contains static methods for performing operations on an array of Employee objects.
 
-It contains static methods for performing operations on an array of Student objects.
-
-### 📊 Calculate Average Marks
+## 📊 Calculate Average Salary
 
 ```java
-calculateAverageMarks(Student[] students)
+calculateAverageSalary(Employee[] employees)
 ```
 
-This method calculates the average marks of all students.
+This method calculates the average salary of all employees.
 
-### 🏆 Find Top Student
+### Example
 
-```java
-findTopStudent(Student[] students)
+```text
+Employee 1: 60000
+Employee 2: 70000
+Employee 3: 50000
+
+Average Salary: 60000.0
 ```
-
-This method finds the student who has the highest marks.
-
-The methods also handle `null` and empty arrays.
 
 ---
 
-## ▶️ 3. Main.java
+## 🏆 Find Highest-Paid Employee
 
-The `Main` class is used to run and test the Student Management System.
+```java
+findHighestPaidEmployee(Employee[] employees)
+```
 
-It creates multiple Student objects and tests:
+This method searches the array and returns the employee who has the highest salary.
 
-- 📝 `toString()`
-- ⚖️ `equals()`
-- 🔢 `hashCode()`
-- 📊 Average marks
-- 🏆 Top student
-- 🔍 Duplicate student ID
+The utility methods also handle:
+
+- `null` arrays
+- Empty arrays
+
+This helps avoid common runtime errors.
 
 ---
 
-## 🧠 OOP Concepts Used
+# ▶️ Main.java
 
-### 🔐 Encapsulation
+The `Main` class is the entry point of the program.
 
-Student fields are private and accessed using getter methods.
+It creates multiple Employee objects and demonstrates the functionality required by the practical.
+
+### Operations Demonstrated
+
+- Displaying Employee objects using `toString()`
+- Comparing Employee objects using `equals()`
+- Checking hash codes using `hashCode()`
+- Calculating average salary
+- Finding the highest-paid employee
+- Testing employees with duplicate IDs
+
+---
+
+# 🧠 OOP Concepts Used
+
+## 🔐 1. Encapsulation
+
+The Employee attributes are declared as private:
 
 ```java
-private int id;
+private int employeeId;
 private String name;
-private double marks;
+private String department;
+private double salary;
 ```
 
-### 🔧 Constructor
+The values are accessed through public getter methods.
 
-A parameterized constructor initializes the Student object.
+This keeps the internal data of the object protected from direct access.
+
+---
+
+## 🔧 2. Parameterized Constructor
+
+A parameterized constructor is used to initialize Employee objects.
 
 ```java
-Student(int id, String name, double marks)
+Employee(int employeeId, String name, String department, double salary)
 ```
-
-### 📝 `toString()`
-
-Used to display Student object information in a readable format.
-
-### ⚖️ `equals()`
-
-Two students are considered equal when they have the same student ID.
-
-### 🔢 `hashCode()`
-
-The hash code is generated using the student ID and is consistent with `equals()`.
-
-### 🛠️ Static Utility Methods
-
-The methods in `StudentUtils` are static, so they can be called directly using the class name.
 
 Example:
 
 ```java
-StudentUtils.findTopStudent(students);
+Employee e1 = new Employee(101, "Rahul", "IT", 65000.0);
 ```
 
 ---
 
-## 🔄 Program Flow
+## 📝 3. `toString()`
+
+The `toString()` method is overridden to provide a readable representation of an Employee object.
+
+It makes it easier to display employee information using:
+
+```java
+System.out.println(employee);
+```
+
+---
+
+## ⚖️ 4. `equals()`
+
+The `equals()` method is overridden to define **logical equality** between Employee objects.
+
+Two Employee objects are considered equal when they have the same employee ID.
+
+Example:
 
 ```text
-👨‍🎓 Create Student Objects
-          ↓
-📦 Store Students in an Array
-          ↓
-📝 Test toString()
-          ↓
-⚖️ Test equals()
-          ↓
-🔢 Test hashCode()
-          ↓
-📊 Calculate Average Marks
-          ↓
-🏆 Find Top Student
+Employee ID 101 == Employee ID 101
+              ↓
+            Equal
 ```
 
 ---
 
-## ▶️ How to Run
+## 🔢 5. `hashCode()`
 
-1. 💻 Open the project in IntelliJ IDEA.
-2. Open:
+The `hashCode()` method is overridden consistently with `equals()`.
+
+Employees having the same ID produce the same hash code.
+
+This follows the important Java rule:
+
+> If two objects are equal, they must have the same hash code.
+
+---
+
+## 🛠️ 6. Static Utility Methods
+
+The methods in `EmployeeUtils` are declared as `static`.
+
+Therefore, an object of `EmployeeUtils` is not required.
+
+Example:
+
+```java
+EmployeeUtils.findHighestPaidEmployee(employees);
+```
+
+---
+
+# 🔄 Program Flow
 
 ```text
-src/studentutils/Main.java
+        👨‍💼 Create Employee Objects
+                  ↓
+          📦 Store in an Array
+                  ↓
+            📝 toString()
+                  ↓
+             ⚖️ equals()
+                  ↓
+            🔢 hashCode()
+                  ↓
+        📊 Calculate Average Salary
+                  ↓
+       🏆 Find Highest-Paid Employee
+                  ↓
+             📤 Display Result
 ```
-
-3. ▶️ Run the `main()` method.
-4. 🖥️ Check the output in the IntelliJ console.
 
 ---
 
-## 📤 Expected Output
+# ▶️ How to Run
 
-The program displays:
+### Step 1: Open the Project
+
+Open the project in **IntelliJ IDEA**.
+
+### Step 2: Open Main.java
+
+Navigate to:
 
 ```text
-📝 Student information
-
-⚖️ Result of equals()
-
-🔢 Hash codes of students
-
-📊 Average marks
-
-🏆 Top student
+src/employeeutils/Main.java
 ```
 
-The exact output depends on the student data used in `Main.java`.
+### Step 3: Run the Program
+
+Right-click inside the `main()` method and select:
+
+```text
+Run 'Main.main()'
+```
+
+### Step 4: Check Console Output
+
+The results will be displayed in the IntelliJ IDEA console.
 
 ---
 
-## 🎯 Learning Objectives
+# 📤 Expected Output
 
-After completing this question, we understand:
+The program displays output similar to:
 
-- 📦 How to create a custom package
-- 🏗️ How to create and use classes
-- 🔐 How encapsulation works
-- 🔧 How constructors initialize objects
-- 📝 How to override `toString()`
-- ⚖️ How to compare objects using `equals()`
-- 🔢 How `hashCode()` works with `equals()`
-- 🛠️ How static utility methods work
-- 📊 How to process an array of objects
+```text
+=== Employee Information ===
+Employee{employeeId=101, name='Rahul', department='IT', salary=65000.0}
+Employee{employeeId=102, name='Priya', department='HR', salary=58000.0}
+
+=== Testing equals() ===
+e1.equals(e6): true
+e1.equals(e2): false
+
+=== Testing hashCode() ===
+e1.hashCode(): 101
+e6.hashCode(): 101
+
+=== Utility Methods ===
+Average Salary: 61666.67
+Highest Paid Employee: Employee{employeeId=103, name='Amit', department='Finance', salary=72000.0}
+```
+
+> Note: The exact output depends on the employee data defined in `Main.java`.
 
 ---
 
-## 💻 Technologies Used
+# 🎯 Learning Objectives
 
-- ☕ Java
-- 💡 IntelliJ IDEA
-- 🧩 Java OOP
-- 📦 Custom Packages
-- 📚 Arrays
-- 🛠️ Static Utility Methods
+After completing this practical, we understand:
+
+- How to create and use custom packages
+- How to implement encapsulation
+- How constructors initialize objects
+- How to use arrays of objects
+- How to override `toString()`
+- How to implement logical equality using `equals()`
+- How `hashCode()` works with `equals()`
+- How to create static utility methods
+- How to calculate values from multiple objects
+- How to find the employee with the highest salary
 
 ---
 
-## 📌 Question 1 Summary
+# 💻 Technologies Used
 
-The **Student Management System** demonstrates basic Java OOP by combining a `Student` class, a `StudentUtils` utility class, and a `Main` class.
+- ☕ **Java**
+- 💡 **IntelliJ IDEA**
+- 🧩 **Object-Oriented Programming**
+- 📦 **Custom Packages**
+- 📚 **Arrays of Objects**
+- 🛠️ **Static Utility Methods**
 
-It provides a simple example of how **object-oriented programming** can be used to store, compare, and process student information. 🎓
+---
+
+# 📌 Question 2 Summary
+
+The **Employee Management System** demonstrates the practical use of Java OOP concepts through three classes:
+
+```text
+Employee
+   ↓
+EmployeeUtils
+   ↓
+Main
+```
+
+The `Employee` class manages employee data, `EmployeeUtils` provides reusable operations, and `Main` demonstrates and tests the complete functionality.
+
+This practical provides a clear understanding of **encapsulation, constructors, method overriding, object equality, hash codes, static methods, and object-array processing**.
+
+---
+
+## ✅ Practical Checklist
+
+- [x] Custom package created
+- [x] Employee class implemented
+- [x] Private fields used
+- [x] Parameterized constructor implemented
+- [x] Getter methods implemented
+- [x] `toString()` overridden
+- [x] `equals()` overridden
+- [x] `hashCode()` overridden
+- [x] `EmployeeUtils` created
+- [x] Average salary calculated
+- [x] Highest-paid employee identified
+- [x] Duplicate employee ID tested
+- [x] `Main.java` used for testing
+
+---
+
+### 📚 Practical Topic
+
+**Custom Packages, Utility Classes & Object Method Overrides**
