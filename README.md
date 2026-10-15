@@ -1,42 +1,50 @@
-# Java OOP Lab Session 10
+# ☕ Java OOP Lab Session 10
 
 ## Custom Packages, Utility Classes & Object Method Overrides
 
 This repository contains the complete implementation of **Java OOP Lab Session 10**.
 
-The practical demonstrates custom package organization, encapsulation, reusable static utility methods, and overriding the `toString()`, `equals()`, and `hashCode()` methods inherited from Java's `Object` class.
+The practical focuses on creating custom Java packages, applying encapsulation, creating reusable utility classes, and overriding important methods inherited from Java's `Object` class.
 
 ---
 
-## Practical Overview
+## 👨‍💻 Author
 
-The lab contains three independent Java practical programs:
+**GitHub:** [@rajsyntax](https://github.com/rajsyntax)
 
-1. **Question 1 - Student Management System**
-2. **Question 2 - Employee Management System**
-3. **Question 3 - Product Management System**
+---
 
-Each question follows the same reusable OOP design pattern:
+## 📚 Practical Overview
+
+This practical contains **three independent Java programs**:
+
+| Question | Project | Package |
+|---|---|---|
+| Q1 | 🎓 Student Management System | `studentutils` |
+| Q2 | 👨‍💼 Employee Management System | `employeeutils` |
+| Q3 | 🛒 Product Management System | `productutils` |
+
+Each question follows a similar OOP structure:
 
 ```text
-Domain Class
-     ↓
-Encapsulation + Object Method Overrides
-     ↓
-Utility Class
-     ↓
-Static Analysis Methods
-     ↓
-Main Class
-     ↓
-Console Output
+        Domain Class
+             ↓
+      Encapsulation
+             ↓
+   toString / equals / hashCode
+             ↓
+       Utility Class
+             ↓
+      Static Methods
+             ↓
+         Main Class
+             ↓
+       Console Output
 ```
 
 ---
 
-# Questions
-
-## Question 1 - Student Management System
+# 🎓 Question 1 - Student Management System
 
 ### Package
 
@@ -44,12 +52,28 @@ Console Output
 studentutils
 ```
 
+### Purpose
+
+The Student Management System is used to create and manage Student objects.
+
+It demonstrates:
+
+- Creating Student objects
+- Encapsulation
+- Object comparison
+- `toString()`
+- `equals()`
+- `hashCode()`
+- Average marks calculation
+- Finding the student with the highest marks
+
 ### Files
 
 ```text
-Student.java
-StudentUtils.java
-Main.java
+studentutils/
+├── Student.java
+├── StudentUtils.java
+└── Main.java
 ```
 
 ### Student Attributes
@@ -60,37 +84,23 @@ String name
 double marks
 ```
 
-### Features
-
-- Parameterized constructor
-- Private fields
-- Public getter methods
-- `toString()` override
-- `equals()` override
-- `hashCode()` override
-- Duplicate student ID equality testing
-- Average marks calculation
-- Finding the top student
-
 ### Utility Methods
 
 ```java
 calculateAverageMarks(Student[] students)
 ```
 
-Returns the arithmetic mean of all student marks.
+Calculates the average marks of all students.
 
 ```java
 findTopStudent(Student[] students)
 ```
 
-Returns the student with the highest marks.
-
-Both methods handle `null` and empty arrays.
+Finds the student with the highest marks.
 
 ---
 
-# Question 2 - Employee Management System
+# 👨‍💼 Question 2 - Employee Management System
 
 ### Package
 
@@ -98,12 +108,28 @@ Both methods handle `null` and empty arrays.
 employeeutils
 ```
 
+### Purpose
+
+The Employee Management System is used to create and manage Employee objects.
+
+It demonstrates:
+
+- Creating Employee objects
+- Encapsulation
+- Object comparison
+- `toString()`
+- `equals()`
+- `hashCode()`
+- Average salary calculation
+- Finding the highest-paid employee
+
 ### Files
 
 ```text
-Employee.java
-EmployeeUtils.java
-Main.java
+employeeutils/
+├── Employee.java
+├── EmployeeUtils.java
+└── Main.java
 ```
 
 ### Employee Attributes
@@ -115,37 +141,23 @@ String department
 double salary
 ```
 
-### Features
-
-- Parameterized constructor
-- Private fields
-- Public getter methods
-- `toString()` override
-- `equals()` override
-- `hashCode()` override
-- Duplicate employee ID equality testing
-- Average salary calculation
-- Finding the highest-paid employee
-
 ### Utility Methods
 
 ```java
 calculateAverageSalary(Employee[] employees)
 ```
 
-Returns the average salary of the employees.
+Calculates the average salary of all employees.
 
 ```java
 findHighestPaidEmployee(Employee[] employees)
 ```
 
-Returns the employee with the highest salary.
-
-Both methods handle `null` and empty arrays.
+Finds the employee with the highest salary.
 
 ---
 
-# Question 3 - Product Management System
+# 🛒 Question 3 - Product Management System
 
 ### Package
 
@@ -153,12 +165,28 @@ Both methods handle `null` and empty arrays.
 productutils
 ```
 
+### Purpose
+
+The Product Management System is used to create and manage Product objects.
+
+It demonstrates:
+
+- Creating Product objects
+- Encapsulation
+- Object comparison
+- `toString()`
+- `equals()`
+- `hashCode()`
+- Total inventory value calculation
+- Finding the most expensive product
+
 ### Files
 
 ```text
-Product.java
-ProductUtils.java
-Main.java
+productutils/
+├── Product.java
+├── ProductUtils.java
+└── Main.java
 ```
 
 ### Product Attributes
@@ -170,37 +198,23 @@ String category
 double price
 ```
 
-### Features
-
-- Parameterized constructor
-- Private fields
-- Public getter methods
-- `toString()` override
-- `equals()` override
-- `hashCode()` override
-- Duplicate product ID equality testing
-- Total inventory value calculation
-- Finding the most expensive product
-
 ### Utility Methods
 
 ```java
 calculateTotalPrice(Product[] products)
 ```
 
-Returns the total price of all products in the array.
+Calculates the total price of all products.
 
 ```java
 findMostExpensiveProduct(Product[] products)
 ```
 
-Returns the product having the highest price.
-
-Both methods handle `null` and empty arrays.
+Finds the product with the highest price.
 
 ---
 
-# Project Structure
+# 📁 Project Structure
 
 ```text
 Java_Practical_10/
@@ -213,28 +227,31 @@ Java_Practical_10/
     ├── studentutils/
     │   ├── Student.java
     │   ├── StudentUtils.java
-    │   └── Main.java
+    │   ├── Main.java
+    │   └── README.md
     │
     ├── employeeutils/
     │   ├── Employee.java
     │   ├── EmployeeUtils.java
-    │   └── Main.java
+    │   ├── Main.java
+    │   └── README.md
     │
     └── productutils/
         ├── Product.java
         ├── ProductUtils.java
-        └── Main.java
+        ├── Main.java
+        └── README.md
 ```
 
 ---
 
-# OOP Concepts Demonstrated
+# 🧠 OOP Concepts Demonstrated
 
-## 1. Encapsulation
+## 1. 🔐 Encapsulation
 
-All class attributes are declared as `private`.
+All important attributes are declared as `private`.
 
-Example:
+For example:
 
 ```java
 private int id;
@@ -242,13 +259,15 @@ private String name;
 private double marks;
 ```
 
-Public getter methods are provided to access the values.
+Getter methods are used to access the values.
+
+This prevents direct access to the internal data of an object.
 
 ---
 
-## 2. Constructors
+## 2. 🔧 Parameterized Constructors
 
-Each domain class uses a parameterized constructor to initialize its attributes.
+Each domain class uses a parameterized constructor to initialize its objects.
 
 Example:
 
@@ -260,69 +279,63 @@ public Student(int id, String name, double marks) {
 }
 ```
 
----
-
-## 3. Method Overriding
-
-Each domain class overrides these methods inherited from `Object`:
-
-```java
-toString()
-equals()
-hashCode()
-```
+The same concept is applied to `Employee` and `Product`.
 
 ---
 
-## 4. `toString()`
+## 3. 📝 `toString()`
 
-The `toString()` method provides a readable representation of an object.
+The `toString()` method is overridden to provide meaningful information about an object.
 
-Example:
+For example:
 
 ```text
 Student{id=1, name='Alice', marks=95.5}
 ```
 
-This makes it easier to display object information using:
-
-```java
-System.out.println(student);
-```
+This is more useful than Java's default object representation.
 
 ---
 
-## 5. `equals()`
+## 4. ⚖️ `equals()`
 
-The `equals()` method defines logical equality.
+The `equals()` method is overridden to define logical equality.
 
-The identity field for each class is:
+Objects are compared using their unique ID:
 
 | Class | Equality Based On |
 |---|---|
-| Student | `id` |
-| Employee | `employeeId` |
-| Product | `productId` |
+| `Student` | `id` |
+| `Employee` | `employeeId` |
+| `Product` | `productId` |
 
 Therefore, two objects with the same ID are considered equal.
 
 ---
 
-## 6. `hashCode()`
+## 5. 🔢 `hashCode()`
 
-`hashCode()` is implemented consistently with `equals()`.
+The `hashCode()` method is implemented consistently with `equals()`.
 
-Objects having the same identity ID produce the same hash code.
+If two objects are equal, they must have the same hash code.
 
-This is important when objects are used with collections such as `HashSet` and `HashMap`.
+This is especially important when objects are used in collections such as `HashSet` and `HashMap`.
 
 ---
 
-## 7. Static Utility Methods
+## 6. 🛠️ Static Utility Classes
 
-The utility classes contain static methods that operate on arrays of objects.
+Each package contains a utility class:
 
-For example:
+```text
+StudentUtils
+EmployeeUtils
+ProductUtils
+```
+
+These classes contain static methods for processing arrays of objects.
+
+Example:
 
 ```java
 StudentUtils.findTopStudent(students);
@@ -332,9 +345,9 @@ There is no need to create a `StudentUtils` object.
 
 ---
 
-## 8. Null Safety
+## 7. 🛡️ Null and Empty Array Handling
 
-Utility methods check for `null` and empty arrays before processing data.
+The utility methods check for invalid or empty arrays before processing.
 
 Example:
 
@@ -344,34 +357,43 @@ if (students == null || students.length == 0) {
 }
 ```
 
-This prevents common runtime errors when invalid or empty input is supplied.
+This helps prevent common runtime errors.
 
 ---
 
-# Technologies Used
+# 🔄 Overall Program Flow
 
-- Java
-- IntelliJ IDEA
-- Java OOP
-- Custom Packages
-- Static Methods
-- Object Method Overriding
-- Arrays of Objects
+All three questions follow a similar flow:
+
+```text
+Create Objects
+     ↓
+Store Objects in Array
+     ↓
+Display Objects
+     ↓
+Test equals()
+     ↓
+Test hashCode()
+     ↓
+Call Utility Methods
+     ↓
+Calculate Required Result
+     ↓
+Display Result
+```
 
 ---
 
-# IntelliJ IDEA Setup
+# ▶️ How to Run in IntelliJ IDEA
 
-## Requirements
+## Step 1 - Open Project
 
-- IntelliJ IDEA
-- Java JDK configured in IntelliJ IDEA
+Open `Java_Practical_10` in IntelliJ IDEA.
 
-The practical does not require any special Java feature, so conventional Java syntax is used throughout the project.
+## Step 2 - Select the Required Question
 
----
-
-## Running Question 1
+### Question 1
 
 Open:
 
@@ -385,9 +407,7 @@ Run:
 studentutils.Main
 ```
 
----
-
-## Running Question 2
+### Question 2
 
 Open:
 
@@ -401,9 +421,7 @@ Run:
 employeeutils.Main
 ```
 
----
-
-## Running Question 3
+### Question 3
 
 Open:
 
@@ -417,11 +435,11 @@ Run:
 productutils.Main
 ```
 
-Each question has its own `Main` class and can be executed independently.
+Each question has its own `Main` class, so all three programs can be executed independently.
 
 ---
 
-# Sample Output
+# 📤 Sample Output
 
 ## Question 1
 
@@ -443,8 +461,6 @@ Average Marks: 90.75
 Top Student: Student{id=1, name='Alice', marks=95.5}
 ```
 
----
-
 ## Question 2
 
 ```text
@@ -464,8 +480,6 @@ e6.hashCode(): 101
 Average Salary: 62200.0
 Highest Paid Employee: Employee{employeeId=103, name='Amit', department='Finance', salary=72000.0}
 ```
-
----
 
 ## Question 3
 
@@ -487,88 +501,123 @@ Total Inventory Value: 158000.0
 Most Expensive Product: Product{productId=201, productName='Laptop', category='Electronics', price=75000.0}
 ```
 
+> **Note:** Sample values are representative. The actual output depends on the objects and values defined in each `Main.java`.
+
 ---
 
-# Testing Requirements
+# 🧪 Testing Covered
 
-The project tests:
+The practical demonstrates and tests:
 
 - `toString()`
 - `equals()`
 - `hashCode()`
-- Utility methods
 - Duplicate-ID equality
 - Average calculations
 - Maximum-value searches
 - Total inventory value
-
-Each practical creates at least five objects as required by the lab.
-
----
-
-# Package Organization
-
-The project uses three separate packages:
-
-```text
-studentutils
-employeeutils
-productutils
-```
-
-This keeps related classes together and avoids naming conflicts between the different domain models.
+- Null array handling
+- Empty array handling
+- Arrays containing multiple objects
 
 ---
 
-# Submission Checklist
+# 💻 Technologies Used
 
-- [x] Question 1 completed
-- [x] Question 2 completed
-- [x] Question 3 completed
+- ☕ Java
+- 💡 IntelliJ IDEA
+- 🧩 Object-Oriented Programming
+- 📦 Custom Java Packages
+- 📚 Arrays of Objects
+- 🛠️ Static Utility Methods
+- 🔄 Method Overriding
+
+---
+
+# 🎯 Learning Objectives
+
+After completing this practical, the student should be able to:
+
+1. Create and use custom Java packages.
+2. Apply encapsulation using private fields and getter methods.
+3. Initialize objects using parameterized constructors.
+4. Override `toString()`, `equals()`, and `hashCode()`.
+5. Understand logical equality between objects.
+6. Maintain the `equals()` and `hashCode()` contract.
+7. Create reusable static utility methods.
+8. Process arrays containing custom objects.
+9. Perform calculations using object data.
+10. Apply OOP concepts to different real-world examples.
+
+---
+
+# ✅ Submission Checklist
+
+- [x] Question 1 - Student Management System
+- [x] Question 2 - Employee Management System
+- [x] Question 3 - Product Management System
 - [x] Custom packages created
 - [x] Private fields used
-- [x] Public getters provided
+- [x] Getter methods implemented
 - [x] Parameterized constructors implemented
 - [x] `toString()` overridden
 - [x] `equals()` overridden
 - [x] `hashCode()` overridden
 - [x] Static utility methods implemented
-- [x] Null/empty-array guards included
+- [x] Null and empty-array handling included
 - [x] Duplicate IDs tested
-- [x] Console output displayed
 - [x] Separate `Main` class for each question
+- [x] Question-wise README files included
 
 ---
 
-# Learning Objectives
+# 📚 Question-wise Documentation
 
-After completing this practical, the student should be able to:
-
-1. Create and use custom Java packages.
-2. Apply encapsulation using private fields and public getters.
-3. Create objects using parameterized constructors.
-4. Override `toString()`, `equals()`, and `hashCode()`.
-5. Understand logical equality between objects.
-6. Maintain the `equals()` and `hashCode()` contract.
-7. Create reusable static utility classes.
-8. Process arrays of custom objects.
-9. Perform aggregate calculations on object data.
-10. Apply the same OOP design pattern to different real-world domains.
-
----
-
-# GitHub
-
-Repository:
+Detailed documentation for each question is available inside its respective package:
 
 ```text
-Java_Practical_10
+src/
+├── studentutils/
+│   └── README.md
+│
+├── employeeutils/
+│   └── README.md
+│
+└── productutils/
+    └── README.md
 ```
 
-This repository contains the source code and documentation for Java OOP Lab Session 10.
+These README files explain the individual classes, methods, OOP concepts, program flow, and execution steps for each question.
 
 ---
 
-## Practical Topic
+# 📌 Conclusion
+
+**Java OOP Lab Session 10** demonstrates how Java OOP concepts can be applied to three different real-world scenarios:
+
+```text
+🎓 Student Management
+        +
+👨‍💼 Employee Management
+        +
+🛒 Product Management
+        ↓
+   Java OOP Concepts
+```
+
+The practical provides hands-on experience with **custom packages, encapsulation, constructors, method overriding, object equality, hash codes, static utility methods, and arrays of objects**.
+
+---
+
+## 👨‍💻 Author
+
+**rajsyntax**
+
+Java OOP Lab Session 10  
+Semester 3
+
+---
+
+### 📖 Practical Topic
 
 **Custom Packages, Utility Classes & Object Method Overrides**
